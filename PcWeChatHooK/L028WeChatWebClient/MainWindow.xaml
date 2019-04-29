@@ -1,0 +1,192 @@
+﻿<Window x:Class="L028WeChatWebClient.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="C# WebClient &amp; HttpListener 测试工具" Height="627" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+            <DockPanel>
+                <TextBlock TextWrapping="Wrap" Text="{Binding ParamName}" Width="100"/>
+                <TextBlock TextWrapping="Wrap" Text="{Binding ParamValue}"/>
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid MouseLeftButtonUp="Grid_MouseLeftButtonUp" ButtonBase.Click="Grid_Click">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" Grid.RowSpan="2" >
+            <GroupBox.Header>
+                <HeaderedContentControl Header="发送数据" FontWeight="Bold" FontSize="20"/>
+            </GroupBox.Header>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <DockPanel>
+                    <GroupBox DockPanel.Dock="Top">
+                        <GroupBox.Header>
+                            <HeaderedContentControl>
+                                <TextBlock x:Name="textBlock" Text="配置" Padding="3" Margin="3"/>
+                            </HeaderedContentControl>
+                        </GroupBox.Header>
+                        <DockPanel >
+                            <StackPanel x:Name="stackPanel_Post_CheckBoxes" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                                <TextBlock Text="发送内容:" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="3" Margin="3"/>
+                                <CheckBox x:Name="checkBox_PostData"  Padding="0,3" Margin="3" Content="数据" VerticalContentAlignment="Center" Click="CheckBox_PostData_Click" />
+                                <CheckBox x:Name="checkBox_PostParam"  Padding="0,3" Margin="3" Content="字段" VerticalContentAlignment="Center" Click="CheckBox_PostParam_Click" />
+                                <CheckBox x:Name="checkBox_PostFile"  Padding="0,3" Margin="3" Content="文件" VerticalContentAlignment="Center" Click="CheckBox_PostFile_Click" />
+                            </StackPanel>
+                            <StackPanel x:Name="stackPanel_Get_CheckBoxes" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                                <TextBlock Text="发送内容:" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="3" Margin="3"/>
+                                <CheckBox x:Name="checkBox_GetData"  Padding="0,3" Margin="3" Content="数据" VerticalContentAlignment="Center" Click="CheckBox_GetData_Click" />
+                                <CheckBox x:Name="checkBox_GetParam"  Padding="0,3" Margin="3" Content="字段" VerticalContentAlignment="Center" Click="CheckBox_GetParam_Click" />
+                            </StackPanel>
+
+                            <Button x:Name="button" Content="发送" Width="67" Padding="0,3" Margin="3" Height="23" DockPanel.Dock="Right" Click="Bt_SendData_Click"/>
+                            <ComboBox x:Name="comboBoxPostGetChoice" Width="54" Padding="0,3" Margin="3" DockPanel.Dock="Right" SelectionChanged="Cb_Method_SelectionChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" LostFocus="ComboBoxPostGetChoice_LostFocus">
+                                <ComboBoxItem Content="POST" />
+                                <ComboBoxItem Content="GET" IsSelected="True"/>
+                            </ComboBox>
+                            <TextBox x:Name="tb_SendUrl" Text="http://127.0.0.1:8421" Padding="0,3" Margin="3" TextChanged="Tb_Url_TextChanged"/>
+                        </DockPanel>
+                    </GroupBox>
+                    <StackPanel DockPanel.Dock="Top" x:Name="dockPanel_Post">
+                        <GroupBox x:Name="groupBox_PostData">
+                            <GroupBox.Header>
+                                <HeaderedContentControl>
+                                    <TextBlock Text="数据" />
+                                </HeaderedContentControl>
+                            </GroupBox.Header>
+                            <DockPanel>
+                                <StackPanel>
+                                    <Button x:Name="button2" Content="+" FontSize="10" Click="StackPanelAdd_Click" Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}"  Padding="0,3" Margin="3" Width="50"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <DockPanel>
+                                        <StackPanel ButtonBase.Click="StackPanelClick_RadioButton">
+                                            <RadioButton Content="字符串" Padding="0,3" Margin="3" Width="62" IsChecked="True" VerticalContentAlignment="Center" Checked="RadioButton_Checked"/>
+                                            <RadioButton Content="16进制" Padding="0,3" Margin="3" Width="62"  VerticalContentAlignment="Center" />
+                                        </StackPanel>
+                                        <Button x:Name="button1" Content="-" FontSize="10" Width="40" DockPanel.Dock="Right" Padding="0,3" Margin="3" Click="Bt_DenyDelete_Click" />
+                                        <StackPanel>
+                                            <TextBox Text="测试字符串" Padding="0,3" Margin="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="{Binding ActualHeight, ElementName=button1}" TextWrapping="Wrap" />
+                                            <TextBox Text="31 32 33 34 35" Padding="0,3" Margin="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" PreviewMouseLeftButtonUp="TextBox_PreviewMouseLeftButtonUp" KeyUp="TextBoxData1_KeyUp" Height="{Binding ActualHeight, ElementName=button1}" Visibility="Collapsed" TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBox_PostParam">
+                            <GroupBox.Header>
+                                <HeaderedContentControl>
+                                    <TextBlock Text="字段" />
+                                </HeaderedContentControl>
+                            </GroupBox.Header>
+                            <DockPanel>
+                                <StackPanel>
+                                    <Button Content="+" FontSize="10" Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}"  Padding="0,3" Margin="3" Click="StackPanelAdd_Click" Width="50"/>
+                                </StackPanel>
+                                <StackPanel  x:Name="stackPanelPostParam">
+                                    <DockPanel>
+                                        <TextBox Text="p0000" Padding="0,3" Margin="3" Width="100" />
+                                        <TextBlock Text="=" FontSize="10" Padding="0,3" Margin="3" />
+                                        <Button Content="-" FontSize="10" Width="40" DockPanel.Dock="Right" Padding="0,3" Margin="3" Click="Bt_DenyDelete_Click" />
+                                        <TextBox Text="测试内容" Padding="0,3" Margin="3" />
+                                    </DockPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBox_PostFile">
+                            <GroupBox.Header>
+                                <HeaderedContentControl>
+                                    <TextBlock Text="文件" />
+                                </HeaderedContentControl>
+                            </GroupBox.Header>
+                            <DockPanel>
+                                <StackPanel>
+                                    <Button Content="+" FontSize="10"  Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}"  Padding="0,3" Margin="3" Click="StackPanelAdd_Click" Width="50"/>
+                                </StackPanel>
+                                <StackPanel  x:Name="stackPanelPostFile">
+                                    <DockPanel>
+                                        <Button Content="-" FontSize="10" Width="40" DockPanel.Dock="Right" Padding="0,3" Margin="3" Click="Bt_DenyDelete_Click" />
+                                        <Button Content="文件..." Padding="0,3" Margin="3" Width="67" DockPanel.Dock="Right" Click="Bt_SelectFile_Click"/>
+                                        <TextBox  Padding="0,3" Margin="3" IsReadOnly="True"/>
+                                    </DockPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Top" x:Name="dockPanel_Get">
+                        <GroupBox x:Name="groupBox_GetData">
+                            <GroupBox.Header>
+                                <HeaderedContentControl>
+                                    <TextBlock Text="数据" />
+                                </HeaderedContentControl>
+                            </GroupBox.Header>
+                            <DockPanel>
+                                <StackPanel>
+                                    <Button Content="+" FontSize="10" Click="StackPanelAdd_Click" Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}"  Padding="0,3" Margin="3" Width="50"/>
+                                </StackPanel>
+                                <StackPanel x:Name="stackPanelGetData" >
+                                    <DockPanel x:Name="stackPanelGetDockPanel">
+                                        <StackPanel>
+                                            <TextBlock Text="字符串" Padding="0,3" Margin="3" Width="62"  />
+                                        </StackPanel>
+                                        <Button Content="-" FontSize="10" Width="40" DockPanel.Dock="Right" Padding="0,3" Margin="3" Click="Bt_DenyDelete_Click" />
+                                        <TextBox Text="测试字符串" Padding="0,3" Margin="3" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
+                                    </DockPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBox_GetParam">
+                            <GroupBox.Header>
+                                <HeaderedContentControl>
+                                    <TextBlock Text="字段" />
+                                </HeaderedContentControl>
+                            </GroupBox.Header>
+                            <DockPanel>
+                                <StackPanel>
+                                    <Button Content="+" FontSize="10"  Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}"  Padding="0,3" Margin="3" Width="50" Click="StackPanelAdd_Click"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <DockPanel>
+                                        <TextBox Text="p0000" Padding="0,3" Margin="3" Width="100" />
+                                        <TextBlock Text="=" FontSize="10" Padding="0,3" Margin="3" />
+                                        <Button Content="-" FontSize="10" Width="40" DockPanel.Dock="Right" Padding="0,3" Margin="3" Click="Bt_DenyDelete_Click" />
+                                        <TextBox Text="测试内容" Padding="0,3" Margin="3" />
+                                    </DockPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </DockPanel>
+            </ScrollViewer>
+        </GroupBox>
+        <GroupBox Grid.Column="1">
+            <GroupBox.Header>
+                <HeaderedContentControl Header="发送信息" FontWeight="Bold" FontSize="20"/>
+            </GroupBox.Header>
+            <ListView x:Name="listViewSend" ItemTemplate="{DynamicResource DataTemplate1}"></ListView>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Grid.Column="1" Grid.Row="1" >
+            <GroupBox.Header>
+                <HeaderedContentControl Header="返回数据" FontWeight="Bold" FontSize="20"/>
+            </GroupBox.Header>
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top" LastChildFill="False" >
+                    <RadioButton x:Name="radioButton2" Content="字符串" Padding="0,3" Margin="3" IsChecked="True" Click="Rb_String_Click" VerticalContentAlignment="Center"/>
+                    <RadioButton x:Name="radioButton3" Content="16进制" Padding="0,3" Margin="3"  Click="Rb_Hex_Click" VerticalContentAlignment="Center"/>
+                    <Button Content="《2019 PC微信 探秘》" Height="23"  DockPanel.Dock="Right" Click="Bt_Help_Click" Padding="0,3" Margin="3,3,0,3" />
+                    <Button Content="《Microsoft Blend》" Height="23" DockPanel.Dock="Right" Click="Button_Click" Padding="0,3" Margin="3" />
+                </DockPanel>
+                <TextBox x:Name="textBox3" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" IsReadOnly="True" />
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</Window>
+

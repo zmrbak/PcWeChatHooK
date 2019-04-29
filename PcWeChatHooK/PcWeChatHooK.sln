@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L007CInjector", "L007CInjec
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L008eInjector", "L008eInjector\L008eInjector.vcxproj", "{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L009CsInjector", "L009CsInjector\L009CsInjector.csproj", "{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,18 @@ Global
 		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x64.Build.0 = Release|x64
 		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x86.ActiveCfg = Release|Win32
 		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x86.Build.0 = Release|Win32
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|x64.Build.0 = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Debug|x86.Build.0 = Debug|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|x64.ActiveCfg = Release|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|x64.Build.0 = Release|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{45AC5217-2267-4F01-B68D-ED7E9CDD0BE7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

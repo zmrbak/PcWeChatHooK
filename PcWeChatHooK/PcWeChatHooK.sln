@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L005eHookDll", "L005eHookDl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L007CInjector", "L007CInjector\L007CInjector.vcxproj", "{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L008eInjector", "L008eInjector\L008eInjector.vcxproj", "{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,16 @@ Global
 		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x64.Build.0 = Release|x64
 		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x86.ActiveCfg = Release|Win32
 		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x86.Build.0 = Release|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Debug|x64.ActiveCfg = Debug|x64
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Debug|x64.Build.0 = Debug|x64
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Debug|x86.Build.0 = Debug|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|Any CPU.ActiveCfg = Release|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x64.ActiveCfg = Release|x64
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x64.Build.0 = Release|x64
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x86.ActiveCfg = Release|Win32
+		{2B377DCD-532D-45AD-B0BE-ED32851FBDE4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

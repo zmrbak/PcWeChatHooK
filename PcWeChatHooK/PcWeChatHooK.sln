@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L028WeChatWebClient", "L028
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L030QrcodeStringInlineHook", "L030QrcodeStringInlineHook\L030QrcodeStringInlineHook.vcxproj", "{639B413F-5BDB-43EC-ABFF-2B2A978E071B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L031CsharpComByCplusplus", "L031CsharpComByCplusplus\L031CsharpComByCplusplus.vcxproj", "{6B0EDA73-AFFE-462C-B361-E8B005998337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L031CSharpHookDLL", "L031CSharpHookDLL\L031CSharpHookDLL.csproj", "{A174043B-F041-4DAF-AC17-B0D13D020E60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -313,6 +317,28 @@ Global
 		{639B413F-5BDB-43EC-ABFF-2B2A978E071B}.Release|x64.Build.0 = Release|x64
 		{639B413F-5BDB-43EC-ABFF-2B2A978E071B}.Release|x86.ActiveCfg = Release|Win32
 		{639B413F-5BDB-43EC-ABFF-2B2A978E071B}.Release|x86.Build.0 = Release|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Debug|x64.ActiveCfg = Debug|x64
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Debug|x64.Build.0 = Debug|x64
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Debug|x86.Build.0 = Debug|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Release|Any CPU.ActiveCfg = Release|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Release|x64.ActiveCfg = Release|x64
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Release|x64.Build.0 = Release|x64
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Release|x86.ActiveCfg = Release|Win32
+		{6B0EDA73-AFFE-462C-B361-E8B005998337}.Release|x86.Build.0 = Release|Win32
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|x64.Build.0 = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Debug|x86.Build.0 = Debug|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|x64.ActiveCfg = Release|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|x64.Build.0 = Release|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|x86.ActiveCfg = Release|Any CPU
+		{A174043B-F041-4DAF-AC17-B0D13D020E60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,3 +30,22 @@
 *.exe
 *.out
 *.app
+
+# 忽略文件夹
+Release/
+Debug/
+Version.tlog/
+x64/
+x86/
+./vs
+
+# 忽略指定后缀名文件
+*.VC.db
+*.exp
+*.pdb
+*.log
+*.pch
+*.obj
+*.ipch
+/.vs
+/L004/.vs/L004/v16

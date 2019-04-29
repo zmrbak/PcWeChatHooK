@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L006CsHookDll", "L006CsHook
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L005eHookDll", "L005eHookDll\L005eHookDll.vcxproj", "{91F93E6A-C8C8-4D4D-A377-3A2D76C6A3AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L007CInjector", "L007CInjector\L007CInjector.vcxproj", "{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,16 @@ Global
 		{91F93E6A-C8C8-4D4D-A377-3A2D76C6A3AB}.Release|x64.Build.0 = Release|x64
 		{91F93E6A-C8C8-4D4D-A377-3A2D76C6A3AB}.Release|x86.ActiveCfg = Release|Win32
 		{91F93E6A-C8C8-4D4D-A377-3A2D76C6A3AB}.Release|x86.Build.0 = Release|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Debug|x64.ActiveCfg = Debug|x64
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Debug|x64.Build.0 = Debug|x64
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Debug|x86.ActiveCfg = Debug|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Debug|x86.Build.0 = Debug|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x64.ActiveCfg = Release|x64
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x64.Build.0 = Release|x64
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x86.ActiveCfg = Release|Win32
+		{963BAA3E-89F6-43EE-9CB9-93EA0DD622FE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

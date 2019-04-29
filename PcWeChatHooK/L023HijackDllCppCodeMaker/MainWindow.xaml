@@ -1,0 +1,39 @@
+﻿<Window x:Class="L023HijackDllCppCodeMaker.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PC微信DLL劫持Cpp源文件创建器" Height="167" Loaded="Window_Loaded" SizeToContent="Width" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <GroupBox>
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock Text="请选择模块"></TextBlock>
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <DockPanel DockPanel.Dock="Top">
+                    <ComboBox x:Name="comboxMoudles" Margin="3" Padding="3"/>
+                </DockPanel>
+            </GroupBox>
+            <GroupBox>
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock Text="请选择功能"></TextBlock>
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <StackPanel>
+                    <StackPanel  Orientation="Horizontal">
+                        <Button Content="刷新模块" Margin="3" Padding="3" Width="150" Click="Button_Click"/>
+                        <CheckBox x:Name="checkBoxBanned" Content="过滤被系统屏蔽的模块" VerticalAlignment="Center" Margin="3" IsChecked="True" Click="CheckBoxBanned_Click" ></CheckBox>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal">
+                        <Button Content="创建Cpp源代码" Margin="3" Padding="3" Width="150" Click="Button_Click_1"/>
+                        <Button Content="视频帮助" Margin="3" Padding="3" Width="150" Click="Button_Click_2"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

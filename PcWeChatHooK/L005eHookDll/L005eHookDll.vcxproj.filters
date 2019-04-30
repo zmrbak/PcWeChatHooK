@@ -18,4 +18,9 @@
     <None Include="eHook.dll" />
     <None Include="eHook.e" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Image.gif">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

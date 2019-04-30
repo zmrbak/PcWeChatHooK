@@ -126,6 +126,9 @@
     <None Include="eHook.dll" />
     <None Include="eHook.e" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Image.gif" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

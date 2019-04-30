@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L031CSharpHookDLL", "L031CS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L039eInlineHook", "L039eInlineHook\L039eInlineHook.vcxproj", "{AB6883D4-1D33-4B3D-97AC-5D9EFA6B3B0D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L040WxTextMsgSender", "L040WxTextMsgSender\L040WxTextMsgSender.vcxproj", "{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -351,6 +353,16 @@ Global
 		{AB6883D4-1D33-4B3D-97AC-5D9EFA6B3B0D}.Release|x64.Build.0 = Release|x64
 		{AB6883D4-1D33-4B3D-97AC-5D9EFA6B3B0D}.Release|x86.ActiveCfg = Release|Win32
 		{AB6883D4-1D33-4B3D-97AC-5D9EFA6B3B0D}.Release|x86.Build.0 = Release|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Debug|x64.ActiveCfg = Debug|x64
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Debug|x64.Build.0 = Debug|x64
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Debug|x86.Build.0 = Debug|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Release|x64.ActiveCfg = Release|x64
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Release|x64.Build.0 = Release|x64
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Release|x86.ActiveCfg = Release|Win32
+		{A945EC53-63FA-42F4-B0B4-F8913ECFDDFE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

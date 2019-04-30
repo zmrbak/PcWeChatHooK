@@ -1,0 +1,39 @@
+﻿<Window x:Class="L000WeChatDllInjector.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="微信DLL注入器" Height="357" Width="468" WindowStartupLocation="CenterScreen" Icon="注入.png" Loaded="Window_Loaded" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel>
+            <GroupBox>
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock>微信信息</TextBlock>
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <TextBox x:Name="tb_WxInfo" Height="195" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+            </GroupBox>
+            <GroupBox>
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock>选择DLL</TextBlock>
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <DockPanel>
+                    <TextBlock Text="DLL文件" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"></TextBlock>
+                    <ComboBox x:Name="cb_dllLists" Margin="5"></ComboBox>
+                </DockPanel>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="刷新信息" Width="80" Margin="5" Height="30" Click="Button_Click"/>
+                <Button Content="注入DLL" Width="80" Margin="5" Height="30" Click="Button_Click_1"/>
+                <Button Content="重启微信" Width="80" Margin="5" Height="30" Click="Bt_WxRestart_Click"/>
+                <Button Content="Git源代码" Width="80" Margin="5" Height="30" Click="Button_Click_2"/>
+                <Button Content="视频介绍" Width="80" Margin="5" Click="Bt_Help_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+

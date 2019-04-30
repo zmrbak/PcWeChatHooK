@@ -2,7 +2,6 @@
 // Microsoft Visual C++ 生成的包含文件。
 // 供 L040WxTextMsgSender.rc 使用
 //
-#define IDD_DIALOG1                     101
 #define IDD_MAIN                        101
 #define IDC_WXID                        1001
 #define ID_SELF                         1002

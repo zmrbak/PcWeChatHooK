@@ -1,6 +1,5 @@
 ﻿// L007CInjector.cpp : 定义应用程序的入口点。
 //
-
 #include "framework.h"
 #include "L007CInjector.h"
 #include "resource1.h"

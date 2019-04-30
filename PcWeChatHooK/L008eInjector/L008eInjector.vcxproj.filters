@@ -19,4 +19,9 @@
     <None Include="eInject.exe" />
     <None Include="WeChatHook.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="源.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

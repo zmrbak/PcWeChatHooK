@@ -8,6 +8,10 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
+#include <strstream>
+
+#pragma comment(lib, "Version.lib")
+
 using namespace std;
 
 //声明函数
@@ -20,6 +24,8 @@ VOID RecieveMsgHook();
 string Dec2Hex(DWORD i);
 LPCWSTR String2LPCWSTR(string text);
 LPCWSTR GetMsgByAddress(DWORD memAddress);
+BOOL IsWxVersionValid();
+wstring String2Wstring(string str);
 
 //定义变量
 DWORD wxBaseAddress = 0;
@@ -31,6 +37,10 @@ HWND hWinDlg;
 DWORD jumBackAddress = 0;
 //我们要提取的寄存器内容
 DWORD r_esp = 0;
+//此HOOK匹配的微信版本
+const string wxVersoin = "2.6.7.57";
+//我自己的微信ID
+string myWxId = "";
 
 
 //使用VS+Detours调试，必须一个没用的导出函数
@@ -372,4 +382,67 @@ LPCWSTR GetMsgByAddress(DWORD memAddress)
 	//复制内容
 	wmemcpy_s(msg, msgLength + 1, (WCHAR*)(*(DWORD*)memAddress), msgLength + 1);
 	return msg;
+}
+
+//检查微信版本是否匹配
+BOOL IsWxVersionValid()
+{
+	WCHAR VersionFilePath[MAX_PATH];
+	if (GetModuleFileName((HMODULE)wxBaseAddress, VersionFilePath, MAX_PATH) == 0)
+	{
+		return FALSE;
+	}
+
+	string asVer = "";
+	VS_FIXEDFILEINFO* pVsInfo;
+	unsigned int iFileInfoSize = sizeof(VS_FIXEDFILEINFO);
+	int iVerInfoSize = GetFileVersionInfoSize(VersionFilePath, NULL);
+	if (iVerInfoSize != 0) {
+		char* pBuf = new char[iVerInfoSize];
+		if (GetFileVersionInfo(VersionFilePath, 0, iVerInfoSize, pBuf)) {
+			if (VerQueryValue(pBuf, TEXT("\\"), (void**)& pVsInfo, &iFileInfoSize)) {
+				//主版本2.6.7.57
+				//2
+				int s_major_ver = (pVsInfo->dwFileVersionMS >> 16) & 0x0000FFFF;
+				//6
+				int s_minor_ver = pVsInfo->dwFileVersionMS & 0x0000FFFF;
+				//7
+				int s_build_num = (pVsInfo->dwFileVersionLS >> 16) & 0x0000FFFF;
+				//57
+				int s_revision_num = pVsInfo->dwFileVersionLS & 0x0000FFFF;
+
+				//把版本变成字符串
+				strstream wxVer;
+				wxVer << s_major_ver << "." << s_minor_ver << "." << s_build_num << "." << s_revision_num;
+				wxVer >> asVer;
+			}
+		}
+		delete[] pBuf;
+	}
+
+	//版本匹配
+	if (asVer == wxVersoin)
+	{
+		return TRUE;
+	}
+
+	//版本不匹配
+	return FALSE;
+}
+
+
+//将string转换成wstring  
+wstring String2Wstring(string str)
+{
+	wstring result;
+	//获取缓冲区大小，并申请空间，缓冲区大小按字符计算  
+	int len = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);
+	TCHAR* buffer = new TCHAR[len + 1];
+	//多字节编码转换成宽字节编码  
+	MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), buffer, len);
+	buffer[len] = '\0';             //添加字符串结尾  
+	//删除缓冲区并返回值  
+	result.append(buffer);
+	delete[] buffer;
+	return result;
 }

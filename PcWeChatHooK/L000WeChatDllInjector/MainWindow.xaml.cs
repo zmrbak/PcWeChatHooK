@@ -20,7 +20,6 @@ namespace L000WeChatDllInjector
             InitializeComponent();
         }
 
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
@@ -32,7 +31,7 @@ namespace L000WeChatDllInjector
         public void Refresh()
         {
             int WxId = 0;
-            Process[] processes = Process.GetProcesses();
+            Process[] processes = Process.GetProcessesByName("WeChat");
 
             StringBuilder wxInfo = new StringBuilder();
             wxInfo.Append("刷新时间：\t" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
@@ -40,26 +39,23 @@ namespace L000WeChatDllInjector
 
             foreach (Process process in processes)
             {
-                if (process.ProcessName.ToLower() == "WeChat".ToLower())
+                WxId = process.Id;
+                wxInfo.Append("进程PID：\t" + process.Id + Environment.NewLine);
+                wxInfo.Append("窗口标题：\t" + process.MainWindowTitle + Environment.NewLine);
+                wxInfo.Append("启动时间：\t" + process.StartTime.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
+
+                //确定微信版本
+                foreach (ProcessModule item in process.Modules)
                 {
-                    WxId = process.Id;
-                    wxInfo.Append("进程PID：\t" + process.Id + Environment.NewLine);
-                    wxInfo.Append("窗口标题：\t" + process.MainWindowTitle + Environment.NewLine);
-                    wxInfo.Append("启动时间：\t" + process.StartTime.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
+                    if (item.ModuleName.ToLower() != "WeChatWin.dll".ToLower()) continue;
 
-                    //确定微信版本
-                    foreach (ProcessModule item in process.Modules)
-                    {
-                        if (item.ModuleName.ToLower() != "WeChatWin.dll".ToLower()) continue;
+                    wxInfo.Append("微信目录：\t" + System.IO.Path.GetDirectoryName(process.MainModule.FileName) + Environment.NewLine);
+                    wxInfo.Append("微信版本：\t" + item.FileVersionInfo.FileVersion + Environment.NewLine);
+                    wxInfo.Append("微信基址：\t" + "0x" + item.BaseAddress.ToString("X8") + Environment.NewLine);
 
-                        wxInfo.Append("微信目录：\t" + System.IO.Path.GetDirectoryName(process.MainModule.FileName) + Environment.NewLine);
-                        wxInfo.Append("微信版本：\t" + item.FileVersionInfo.FileVersion + Environment.NewLine);
-                        wxInfo.Append("微信基址：\t" + "0x" + item.BaseAddress.ToString("X8") + Environment.NewLine);
-
-                        break;
-                    }
                     break;
                 }
+                break;
             }
             tb_WxInfo.Text = wxInfo.ToString();
 
@@ -84,7 +80,7 @@ namespace L000WeChatDllInjector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Bt_Refresh_Click(object sender, RoutedEventArgs e)
         {
             Refresh();
         }
@@ -94,7 +90,7 @@ namespace L000WeChatDllInjector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Bt_Inject_Click(object sender, RoutedEventArgs e)
         {
             //1) 遍历系统中的进程，找到微信进程（CreateToolhelp32Snapshot、Process32Next）
             Process[] processes = Process.GetProcesses();
@@ -164,9 +160,6 @@ namespace L000WeChatDllInjector
             }
 
             tb_WxInfo.AppendText("成功注入:\t" + cb_dllLists.Text + Environment.NewLine);
-
-
-
         }
 
         #region  WinApi
@@ -224,8 +217,6 @@ namespace L000WeChatDllInjector
         //  DWORD dwFreeType
         //);
         public static extern Boolean VirtualFreeEx(int hProcess, int lpAddress, int dwSize, int dwFreeType);
-
-
         #endregion
 
         /// <summary>
@@ -291,32 +282,13 @@ namespace L000WeChatDllInjector
                 MessageBox.Show("在系统中未找到微信，请手动启动微信", "错误", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }
-        /// <summary>
-        /// 卸载注入的DLL
-        /// </summary>
-        /// <param name="WxProcess"></param>
-        /// <param name="dllName"></param>
-        /// <returns></returns>
-        private Boolean UnLoadHookedDll(Process WxProcess, String dllName)
-        {
-            //检查是否已经注入
-            Boolean isInjected = false;
-            foreach (ProcessModule processModule in WxProcess.Modules)
-            {
-                if (processModule.ModuleName == cb_dllLists.Text)
-                {
-                    isInjected = true;
-                    break;
-                }
-            }
-            if (isInjected == false)
-            {
-                return true;
-            }
-            return true;
-        }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 打开github代码仓库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Bt_GitHub_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://github.com/zmrbak/PcWeChatHooK");
         }

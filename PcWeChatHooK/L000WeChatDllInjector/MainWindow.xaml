@@ -27,10 +27,10 @@
                 </DockPanel>
             </GroupBox>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="刷新信息" Width="80" Margin="5" Height="30" Click="Button_Click"/>
-                <Button Content="注入DLL" Width="80" Margin="5" Height="30" Click="Button_Click_1"/>
+                <Button Content="刷新信息" Width="80" Margin="5" Height="30" Click="Bt_Refresh_Click"/>
+                <Button Content="注入DLL" Width="80" Margin="5" Height="30" Click="Bt_Inject_Click"/>
                 <Button Content="重启微信" Width="80" Margin="5" Height="30" Click="Bt_WxRestart_Click"/>
-                <Button Content="Git源代码" Width="80" Margin="5" Height="30" Click="Button_Click_2"/>
+                <Button Content="Git源代码" Width="80" Margin="5" Height="30" Click="Bt_GitHub_Click"/>
                 <Button Content="视频介绍" Width="80" Margin="5" Click="Bt_Help_Click"/>
             </StackPanel>
         </StackPanel>

@@ -308,6 +308,38 @@ VOID RecieveMsg()
 	//信息块位置
 	DWORD** msgAddress = (DWORD * *)r_esp;
 
+	//消息类型[[esp]]+0x30
+	//[01文字] [03图片] [31转账XML信息] [22语音消息] [02B视频信息]
+	DWORD msgType = *((DWORD*)(**msgAddress + 0x30));
+	receivedMessage.append(TEXT("消息类型:"));
+	switch (msgType)
+	{
+	case 0x01:
+		receivedMessage.append(TEXT("文字"));
+		break;
+	case 0x03:
+		receivedMessage.append(TEXT("图片"));
+		break;
+	case 0x31:
+		receivedMessage.append(TEXT("转账"));
+		break;
+	case 0x22:
+		receivedMessage.append(TEXT("语音"));
+		break;
+	case 0x2B:
+		receivedMessage.append(TEXT("视频"));
+		break;
+	default:
+		wostringstream oss;
+		oss << msgType;
+		oss.fill('0');
+		oss << setiosflags(ios::uppercase) << setw(8) << hex << msgType;
+		receivedMessage.append(TEXT("未知:0x"));
+		receivedMessage.append(oss.str());
+		break;
+	}
+	receivedMessage.append(TEXT("\r\n"));
+
 	//dc [[[esp]] + 0x114]
 	//判断是群消息还是好友消息
 	//相关信息

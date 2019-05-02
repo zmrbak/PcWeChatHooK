@@ -321,17 +321,31 @@ VOID RecieveMsg()
 		receivedMessage.append(TEXT("图片"));
 		break;
 	case 0x31:
+		//共享实时位置
+		//文件
 		receivedMessage.append(TEXT("转账"));
 		break;
 	case 0x22:
 		receivedMessage.append(TEXT("语音"));
 		break;
+	case 0x2A:
+		receivedMessage.append(TEXT("名片"));
+		break;
 	case 0x2B:
 		receivedMessage.append(TEXT("视频"));
 		break;
+	case 0x2F:
+		//石头剪刀布
+		receivedMessage.append(TEXT("表情"));
+		break;
+	case 0x30:
+		receivedMessage.append(TEXT("位置"));
+		break;
+	case 0x2710:
+		receivedMessage.append(TEXT("红包"));
+		break;
 	default:
 		wostringstream oss;
-		oss << msgType;
 		oss.fill('0');
 		oss << setiosflags(ios::uppercase) << setw(8) << hex << msgType;
 		receivedMessage.append(TEXT("未知:0x"));

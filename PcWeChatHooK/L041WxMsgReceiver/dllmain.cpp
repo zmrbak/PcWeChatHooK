@@ -310,6 +310,7 @@ VOID RecieveMsg()
 
 	//消息类型[[esp]]+0x30
 	//[01文字] [03图片] [31转账XML信息] [22语音消息] [02B视频信息]
+	//感谢：.順唭_自嘫ɑ、unravel提供类型消息。
 	DWORD msgType = *((DWORD*)(**msgAddress + 0x30));
 	receivedMessage.append(TEXT("消息类型:"));
 	switch (msgType)
@@ -320,13 +321,15 @@ VOID RecieveMsg()
 	case 0x03:
 		receivedMessage.append(TEXT("图片"));
 		break;
-	case 0x31:
-		//共享实时位置
-		//文件
-		receivedMessage.append(TEXT("转账"));
-		break;
+	
 	case 0x22:
 		receivedMessage.append(TEXT("语音"));
+		break;
+	case 0x25:
+		receivedMessage.append(TEXT("好友确认"));
+		break;
+	case 0x28:
+		receivedMessage.append(TEXT("POSSIBLEFRIEND_MSG"));
 		break;
 	case 0x2A:
 		receivedMessage.append(TEXT("名片"));
@@ -341,8 +344,38 @@ VOID RecieveMsg()
 	case 0x30:
 		receivedMessage.append(TEXT("位置"));
 		break;
+	case 0x31:
+		//共享实时位置
+		//文件
+		//转账
+		//链接
+		receivedMessage.append(TEXT("共享实时位置、文件、转账、链接"));
+		break;
+	case 0x32:
+		receivedMessage.append(TEXT("VOIPMSG"));
+		break;
+	case 0x33:
+		receivedMessage.append(TEXT("微信初始化"));
+		break;
+	case 0x34:
+		receivedMessage.append(TEXT("VOIPNOTIFY"));
+		break;
+	case 0x35:
+		receivedMessage.append(TEXT("VOIPINVITE"));
+		break;
+	case 0x3E:
+		receivedMessage.append(TEXT("小视频"));
+		break;
+	case 0x270F:
+		receivedMessage.append(TEXT("SYSNOTICE"));
+		break;
 	case 0x2710:
-		receivedMessage.append(TEXT("红包"));
+		//系统消息
+		//红包
+		receivedMessage.append(TEXT("红包、系统消息"));
+		break;
+	case 0x2712:
+		receivedMessage.append(TEXT("撤回消息"));
 		break;
 	default:
 		wostringstream oss;

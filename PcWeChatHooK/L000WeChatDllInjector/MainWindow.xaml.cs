@@ -121,9 +121,32 @@ namespace L000WeChatDllInjector
             //2) 打开微信进程，获得HANDLE（OpenProcess）。
 
             //3) 在微信进程中为DLL文件路径字符串申请内存空间（VirtualAllocEx）。
-            if (this.cb_dllLists.SelectedIndex == -1) this.cb_dllLists.SelectedIndex = 0;
+            if (this.cb_dllLists.Items.Count == 0)
+            {
+                MessageBox.Show("没找到被注入的DLL文件！\n请把被注入的DLL文件放在本程序所在目录下。", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            //默认选择第一项
+            if (this.cb_dllLists.SelectedIndex == -1)
+            {
+                this.cb_dllLists.SelectedIndex = 0;
+            }
+
+            if (this.cb_dllLists.Text == null || this.cb_dllLists.Text == "")
+            {
+                MessageBox.Show("没找到被注入的DLL文件！\n请把被注入的DLL文件放在本程序所在目录下。", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             String DLlPath = System.IO.Path.GetFullPath(this.cb_dllLists.Text); //\0
+            if (File.Exists(DLlPath) == false)
+            {
+                MessageBox.Show("被注入的DLL文件(" + DLlPath + ")不存在！\n请把被注入的DLL文件放在本程序所在目录下。", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+
+            }
+
             int DllPathSize = DLlPath.Length * 2 + 1;
             int MEM_COMMIT = 0x00001000;
             int PAGE_READWRITE = 0x04;

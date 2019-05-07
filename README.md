@@ -68,7 +68,7 @@
 	</li>
 	<li>
 		【演示】如何干掉禁止多开【补丁版】(纯实战)<br />
-（使用补丁实现微信多开，实战）
+（使用OD定位到禁止多开的代码段，修改汇编代码（打补丁），让禁止多开的功能失效，重新保存为一个新的文件）
 	</li>
 	<li>
 		<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/PcWeChatHooK/L014ReadWeChatMemory" target="_blank">【编码】使用C#窥视微信内存 </a><br />

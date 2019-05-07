@@ -19,6 +19,8 @@
 <br/>
 课程讲师：20995658
 <br/>
+课程地址：<a href="http://t.cn/EXUbebQ" target="_blank">网易云课堂《2019 PC微信 探秘》</a>
+<br/>
 <br/>
 <h1>
 	课程目录（连载）

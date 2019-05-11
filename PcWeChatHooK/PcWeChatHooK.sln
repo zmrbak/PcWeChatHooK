@@ -65,6 +65,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L042UnloadInjectedDll", "L0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L043CppDllDebug", "L043CppDllDebug\L043CppDllDebug.vcxproj", "{8FF54245-F75F-44A0-BFEB-8DE8356F26CA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L044WxContractHooker", "L044WxContractHooker\L044WxContractHooker.vcxproj", "{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -413,6 +415,16 @@ Global
 		{8FF54245-F75F-44A0-BFEB-8DE8356F26CA}.Release|x64.Build.0 = Release|x64
 		{8FF54245-F75F-44A0-BFEB-8DE8356F26CA}.Release|x86.ActiveCfg = Release|Win32
 		{8FF54245-F75F-44A0-BFEB-8DE8356F26CA}.Release|x86.Build.0 = Release|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Debug|x64.ActiveCfg = Debug|x64
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Debug|x64.Build.0 = Debug|x64
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Debug|x86.ActiveCfg = Debug|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Debug|x86.Build.0 = Debug|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Release|x64.ActiveCfg = Release|x64
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Release|x64.Build.0 = Release|x64
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Release|x86.ActiveCfg = Release|Win32
+		{B6C89B5D-0BA7-42D4-9E32-D43C4EB56FE8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

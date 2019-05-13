@@ -178,6 +178,10 @@ struct StructWeChatMessageText
 	DWORD length;
 	//字符串最大长度
 	DWORD maxLength;
+
+	//补充两个占位数据
+	DWORD fill1;
+	DWORD fill2;
 };
 
 //将int转成16进制字符串

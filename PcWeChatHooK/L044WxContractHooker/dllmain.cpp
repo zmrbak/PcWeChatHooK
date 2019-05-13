@@ -182,6 +182,10 @@ INT_PTR CALLBACK DialogProc(_In_ HWND   hwndDlg, _In_ UINT   uMsg, _In_ WPARAM w
 
 		InitListContrl();
 
+		//启动就HOOK
+		//减少因不会使用带来的额外疑问
+		HookWx();
+
 		break;
 	}
 	case WM_CLOSE:
@@ -194,13 +198,6 @@ INT_PTR CALLBACK DialogProc(_In_ HWND   hwndDlg, _In_ UINT   uMsg, _In_ WPARAM w
 		if (wParam == IDC_START)
 		{
 			HookWx();
-
-			//启动一个线程用来更新ListView
-			HANDLE hANDLE = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)CheckLoginFinished, NULL, NULL, 0);
-			if (hANDLE != 0)
-			{
-				CloseHandle(hANDLE);
-			}
 			break;
 		}
 
@@ -276,6 +273,13 @@ VOID HookWx()
 	if (isWxHooked == FALSE)
 	{
 		isWxHooked = TRUE;
+
+		//启动一个线程用来更新ListView
+		HANDLE hANDLE = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)CheckLoginFinished, NULL, NULL, 0);
+		if (hANDLE != 0)
+		{
+			CloseHandle(hANDLE);
+		}
 
 		//WeChatWin.dll+175FA4 - 0F85 6B020000         - jne WeChatWin.dll+176215
 		//WeChatWin.dll+175FAA - E8 0186EDFF           - call WeChatWin.dll+4E5B0

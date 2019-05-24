@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L045HttpApiDEMO2"
         mc:Ignorable="d"
-        Title="可爱猫2.0内测版WebApi插件测试" Height="672.495" Width="666.738">
+        Title="【DEMO】WxHttpApi" Height="672.495" Width="666.738" Icon="bitbug_favicon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

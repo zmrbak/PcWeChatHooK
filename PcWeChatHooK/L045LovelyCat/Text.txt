@@ -1,0 +1,15 @@
+
+可爱猫:一个免费的PC微信扩展框架
+
+工具：
+	可爱猫	3.6.9
+	PC微信	2.6.7.40
+	HttpWeb插件 3.6.9
+	易语言网站敏捷开发框架E2EE	1.9.2
+	Visual Studio 2019
+
+可爱猫官网：	http://www.keaimao.com.cn/forum.php
+HttpWeb插件:	http://www.keaimao.com.cn/forum.php?mod=viewthread&tid=201
+PC微信:		可爱猫提供链接
+E2EE：		http://e2ee.jimstone.com.cn/
+ 

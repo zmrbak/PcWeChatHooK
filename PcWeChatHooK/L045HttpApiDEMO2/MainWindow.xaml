@@ -1,0 +1,83 @@
+﻿<Window x:Class="L045HttpApiDEMO2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:L045HttpApiDEMO2"
+        mc:Ignorable="d"
+        Title="可爱猫2.0内测版WebApi插件测试" Height="672.495" Width="666.738">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="255"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+            <DockPanel   LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top">
+                    <Expander Header="参数设置" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Left" Text="服务端IP地址" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                            <TextBox Name="ServerIP" TextChanged="ServerIP_TextChanged" Margin="3"></TextBox>
+                            <TextBlock HorizontalAlignment="Left" Text="服务端Web端口" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                            <TextBox Name="ServerPort" TextChanged="ServerPort_TextChanged" Margin="3"></TextBox>
+                            <TextBlock HorizontalAlignment="Left" Text="管理端IP地址" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                            <TextBox Name="ManagerIP" Margin="3" IsEnabled="False"></TextBox>
+                            <TextBlock HorizontalAlignment="Left" Text="管理端Web端口" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                            <TextBox Name="ManagerPort" TextChanged="ManagerPort_TextChanged" Margin="3"></TextBox>
+                            <TextBlock HorizontalAlignment="Left" Text="共享通讯密钥" VerticalAlignment="Top" Margin="3,0,0,0"/>
+                            <TextBox Name="Token" TextChanged="Token_TextChanged" Margin="3"></TextBox>
+                            <Button Click="Button_Click_2" Margin="3" Padding="3">测试</Button>
+                            <Button Name="SaveConfig" Click="SaveConfig_Click" Margin="3" Padding="3">保存</Button>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="测试配置" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock  Margin="3,0,0,0">机器人微信号</TextBlock>
+                            <TextBox Name="TestRobotWxid" Margin="3" TextChanged="TestRobotWxid_TextChanged"></TextBox>
+                            <TextBlock  Margin="3,0,0,0">聊天室微信号</TextBlock>
+                            <TextBox Name="TestRoomWxid" Margin="3" TextChanged="TestRoomWxid_TextChanged"></TextBox>
+                            <TextBlock  Margin="3,0,0,0">联系人微信号</TextBlock>
+                            <TextBox Name="TestContractWxid" Margin="3" TextChanged="TestContractWxid_TextChanged"></TextBox>
+                            <Button Margin="3" Name="SaveDefaultButton" Padding="3" Click="SaveDefaultButton_Click" IsEnabled="False">保存配置</Button>
+                        </StackPanel>
+                    </Expander>
+                    <StackPanel Margin="5">
+                        <Button VerticalAlignment="Bottom" Margin="8,3,8,3" Padding="3" Click="Button_Click_4">清除日志→</Button>
+                    </StackPanel>
+                    <Expander Header="Api测试" Margin="5" Padding="5" IsExpanded="True" >
+                        <StackPanel>
+                            <TextBlock  Margin="3,0,0,0">请选择Api</TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox Name="CobmoxCommands" Width="226" SelectionChanged="CobmoxCommands_SelectionChanged" Margin="3"/>
+                            </StackPanel>
+                            <TextBlock Name="TextBlock_ApiComments" Visibility="Collapsed" Margin="3" TextWrapping="Wrap"></TextBlock>
+                            <StackPanel Name="CommandParams"/>
+                            <StackPanel>
+                                <Button Content="执行（获取字符串）" Name="ButtonRun" Click="Button_Click" Margin="3" Padding="3"></Button>
+                                <Button Content="执行（获取对象，转字符串）" Click="Button_Click_1" Margin="3" Padding="3"></Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+                <TextBlock Name="textBlock_Note"></TextBlock>
+            </DockPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="3"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox MinHeight="200" Grid.Row="0" Grid.Column="0" AcceptsReturn="True"  VerticalScrollBarVisibility="Auto" Name="serverMessage" Margin="3" TextWrapping="Wrap"/>
+            <GridSplitter Grid.Row="1" Grid.Column="0" ShowsPreview="True" HorizontalAlignment="Stretch" ></GridSplitter>
+            <TextBox MinHeight="200" Grid.Row="2" Grid.Column="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Name="serverMessage2" HorizontalScrollBarVisibility="Auto"  Margin="3" TextWrapping="Wrap"/>
+        </Grid>
+    </Grid>
+</Window>

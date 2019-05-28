@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L045HttpApiDEMO2", "L045Htt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L045LovelyCat", "L045LovelyCat\L045LovelyCat.vcxproj", "{728EA3ED-47F9-4F6F-8393-08E3680C551D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L046eWxTextMsgSender", "L046eWxTextMsgSender\L046eWxTextMsgSender.csproj", "{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -479,6 +481,18 @@ Global
 		{728EA3ED-47F9-4F6F-8393-08E3680C551D}.Release|x64.Build.0 = Release|x64
 		{728EA3ED-47F9-4F6F-8393-08E3680C551D}.Release|x86.ActiveCfg = Release|Win32
 		{728EA3ED-47F9-4F6F-8393-08E3680C551D}.Release|x86.Build.0 = Release|Win32
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|x64.Build.0 = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|x64.Build.0 = Release|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{37989CD4-5ED0-4DC5-8B2A-8601C0C8D5EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

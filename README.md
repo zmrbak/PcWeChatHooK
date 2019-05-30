@@ -22,6 +22,14 @@
 课程地址：<a href="http://t.cn/EXUbebQ" target="_blank">网易云课堂《2019 PC微信 探秘》</a>
 <br/>
 <br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/AirCatApi">AirCatApi</a>	C#编写的微信HOOK接口API<br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/Animations">Animations</a>	一些演示的GIF动图<br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/CWeChatHook">CWeChatHook</a>	C语言的HOOK的DLL<br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/EWeChatHook">EWeChatHook</a>	易语言的HOOK的DLL<br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/PcWeChatHooK">PcWeChatHooK</a>	《2019 PC 微信探秘》课程的演示代码<br/>
+<a href="https://github.com/zmrbak/PcWeChatHooK/tree/master/%E9%83%A8%E5%88%86%E7%BC%96%E8%AF%91%E5%86%85%E5%AE%B9">部分编译内容</a>	部分编译内容<br/>
+<br/>
+<br/>
 <h1>
 	课程目录（连载）
 </h1>

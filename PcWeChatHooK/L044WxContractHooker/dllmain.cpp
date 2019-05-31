@@ -38,7 +38,7 @@ VOID	ListContrlSetItems();
 wstring GetWStringByAddress(DWORD memAddress);
 VOID	CheckLoginFinished();
 VOID	SaveToTxtFie();
-
+std::string wstringToString(const std::wstring& wstr);
 //定义变量
 DWORD wxBaseAddress = 0;
 //HOOK标志
@@ -229,7 +229,7 @@ INT_PTR CALLBACK DialogProc(_In_ HWND   hwndDlg, _In_ UINT   uMsg, _In_ WPARAM w
 		}
 
 
-		//QQ群交流
+		//GitHub
 		if (wParam == IDC_GITHUB)
 		{
 			ShellExecute(hwndDlg, TEXT("open"), TEXT("https://github.com/zmrbak/PcWeChatHooK"), NULL, NULL, NULL);
@@ -732,20 +732,29 @@ VOID ListContrlSetItems()
 VOID SaveToTxtFie()
 {
 	wstring wxUserFileName = L"WxUserLists.txt";
-	wstring userText = L"";
+
 	DWORD index = 0;
+
+
+
+	//作为输出文件打开
+	ofstream ofile;
+	ofile.open(wxUserFileName, ios_base::trunc | ios_base::binary | ios_base::in);
+	//char const* const utf16head = "\xFF\xFE ";
+	//ofile.write(utf16head, 2);
+
 	for (auto& userInfoOld : userInfoList)
 	{
 		wstring wxid1 = get<0>(userInfoOld);
 		wstring wxName = get<1>(userInfoOld);
 		wstring nickName = get<3>(userInfoOld);
 
-		if (wxid1 == L"" && wxName == L"") continue;
+		if (wxid1 == L"" && wxName == L"" && nickName == L"") continue;
 
 		index++;
+
+		wstring userText = L"";
 		userText.append(to_wstring(index))
-			.append(L"\t")
-			.append(wxid1)
 			.append(L"\t")
 			.append(wxid1)
 			.append(L"\t")
@@ -753,18 +762,35 @@ VOID SaveToTxtFie()
 			.append(L"\t")
 			.append(nickName)
 			.append(L"\r\n");
+
+
+		string strintStr = wstringToString(userText);
+		char const* pos = (char const*)strintStr.c_str();
+
+		////写入文件
+		ofile.write(pos, strintStr.length());
+		
 	}
-
-
-	wofstream ofile;
-
-	//作为输出文件打开
-	ofile.open(wxUserFileName, ios_base::trunc);
-
-	//写入文件
-	ofile << userText;
+	ofile.flush();
 	ofile.close();
-
 	ShellExecute(NULL, NULL, L"notepad.exe", wxUserFileName.c_str(), L".\\", SW_SHOW);
+}
 
+std::string wstringToString(const std::wstring& wstr)
+{
+	LPCWSTR pwszSrc = wstr.c_str();
+	int nLen = WideCharToMultiByte(CP_ACP, 0, pwszSrc, -1, NULL, 0, NULL, NULL);
+	if (nLen == 0)
+		return std::string("");
+
+	char* pszDst = new char[nLen];
+	if (!pszDst)
+		return std::string("");
+
+	WideCharToMultiByte(CP_ACP, 0, pwszSrc, -1, pszDst, nLen, NULL, NULL);
+	std::string str(pszDst);
+	delete[] pszDst;
+	pszDst = NULL;
+
+	return str;
 }

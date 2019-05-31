@@ -64,8 +64,8 @@ VOID DoAction()
 
 	__asm
 	{
-		mov ebx, asmWxid
-		push ebx
+		mov edi, asmWxid
+		push edi
 		call callAdrress
 	}
 }

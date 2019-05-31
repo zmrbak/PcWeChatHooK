@@ -170,10 +170,10 @@ WCHAR* CharToWChar(char* s)
 }
 
 //文本消息结构体
-struct StructWeChatMessageText
+struct StructWxid
 {
 	//发送的文本消息指针
-	wchar_t* pText;
+	wchar_t* pWxid;
 	//字符串长度
 	DWORD length;
 	//字符串最大长度
@@ -265,8 +265,8 @@ VOID SentTextMessage(HWND hwndDlg)
 	text.append(WcharToString(wxid));
 	OutputDebugString(String2LPCWSTR(text));
 
-	StructWeChatMessageText structWxid = { 0 };
-	structWxid.pText = wxid;
+	StructWxid structWxid = { 0 };
+	structWxid.pWxid = wxid;
 	structWxid.length = wcslen(wxid);
 	structWxid.maxLength = wcslen(wxid) * 2;
 
@@ -277,7 +277,7 @@ VOID SentTextMessage(HWND hwndDlg)
 
 	//structWxid.Init();
 	//取wxid的地址
-	DWORD* asmWxid = (DWORD*)& structWxid.pText;
+	DWORD* asmWxid = (DWORD*)& structWxid.pWxid;
 
 
 	//组装发送的文本数据
@@ -292,8 +292,8 @@ VOID SentTextMessage(HWND hwndDlg)
 	text.append(WcharToString(wxMsg));
 	OutputDebugString(String2LPCWSTR(text));
 
-	StructWeChatMessageText structMessage = { 0 };
-	structMessage.pText = wxMsg;
+	StructWxid structMessage = { 0 };
+	structMessage.pWxid = wxMsg;
 	structMessage.length = wcslen(wxMsg);
 	structMessage.maxLength = wcslen(wxMsg) * 2;
 
@@ -303,7 +303,7 @@ VOID SentTextMessage(HWND hwndDlg)
 
 	//structMessage.Init();
 	//取msg的地址
-	DWORD* asmMsg = (DWORD*)& structMessage.pText;
+	DWORD* asmMsg = (DWORD*)& structMessage.pWxid;
 
 	//定义一个缓冲区
 	BYTE buff[0x81C] = { 0 };

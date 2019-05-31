@@ -91,6 +91,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L049_IDA_WxQuitChatRoom", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L050_IDA_WxQueryQRCode", "L050_IDA_WxQueryQRCode\L050_IDA_WxQueryQRCode.vcxproj", "{E0D95447-2DA1-4CB0-A804-CCB561237DC6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L051_IDA_WxIsLogedIn", "L051_IDA_WxIsLogedIn\L051_IDA_WxIsLogedIn.vcxproj", "{329098BB-85CD-4CBB-9D47-298E0139B181}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -579,6 +581,16 @@ Global
 		{E0D95447-2DA1-4CB0-A804-CCB561237DC6}.Release|x64.Build.0 = Release|x64
 		{E0D95447-2DA1-4CB0-A804-CCB561237DC6}.Release|x86.ActiveCfg = Release|Win32
 		{E0D95447-2DA1-4CB0-A804-CCB561237DC6}.Release|x86.Build.0 = Release|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Debug|x64.ActiveCfg = Debug|x64
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Debug|x64.Build.0 = Debug|x64
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Debug|x86.ActiveCfg = Debug|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Debug|x86.Build.0 = Debug|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Release|Any CPU.ActiveCfg = Release|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Release|x64.ActiveCfg = Release|x64
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Release|x64.Build.0 = Release|x64
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Release|x86.ActiveCfg = Release|Win32
+		{329098BB-85CD-4CBB-9D47-298E0139B181}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

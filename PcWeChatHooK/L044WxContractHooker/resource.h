@@ -5,7 +5,7 @@
 #define IDD_MAIN                        101
 #define IDC_LIST                        1001
 #define IDC_START                       1002
-#define IDC_STOP                        1003
+#define IDC_SAVE                        1003
 #define IDC_REFRESH                     1004
 #define IDC_WX_REBOOT                   1005
 #define IDC_GITHUB                      1006

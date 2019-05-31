@@ -13,7 +13,8 @@
 #include <map>
 #include <tuple>
 #include <CommCtrl.h>
-
+#include<fstream>
+#include<iomanip>
 
 #pragma comment(lib, "Version.lib")
 
@@ -36,6 +37,7 @@ VOID	InitListContrl();
 VOID	ListContrlSetItems();
 wstring GetWStringByAddress(DWORD memAddress);
 VOID	CheckLoginFinished();
+VOID	SaveToTxtFie();
 
 //定义变量
 DWORD wxBaseAddress = 0;
@@ -201,13 +203,14 @@ INT_PTR CALLBACK DialogProc(_In_ HWND   hwndDlg, _In_ UINT   uMsg, _In_ WPARAM w
 			break;
 		}
 
-		//停止接收
-		if (wParam == IDC_STOP)
+		//保存到文件
+		if (wParam == IDC_SAVE)
 		{
-			UnHookWx();
+			//UnHookWx();
 
-			HWND hFileHelper = GetDlgItem(hwndDlg, IDC_MSG);
-			SetWindowText(hFileHelper, TEXT("停止接收微信消息......"));
+			//HWND hFileHelper = GetDlgItem(hwndDlg, IDC_MSG);
+			//SetWindowText(hFileHelper, TEXT("停止接收微信消息......"));
+			SaveToTxtFie();
 			break;
 		}
 
@@ -724,4 +727,44 @@ VOID ListContrlSetItems()
 		item.pszText = (LPWSTR)nickName.c_str();
 		ListView_SetItem(hListView, &item);
 	}
+}
+
+VOID SaveToTxtFie()
+{
+	wstring wxUserFileName = L"WxUserLists.txt";
+	wstring userText = L"";
+	DWORD index = 0;
+	for (auto& userInfoOld : userInfoList)
+	{
+		wstring wxid1 = get<0>(userInfoOld);
+		wstring wxName = get<1>(userInfoOld);
+		wstring nickName = get<3>(userInfoOld);
+
+		if (wxid1 == L"" && wxName == L"") continue;
+
+		index++;
+		userText.append(to_wstring(index))
+			.append(L"\t")
+			.append(wxid1)
+			.append(L"\t")
+			.append(wxid1)
+			.append(L"\t")
+			.append(wxName)
+			.append(L"\t")
+			.append(nickName)
+			.append(L"\r\n");
+	}
+
+
+	wofstream ofile;
+
+	//作为输出文件打开
+	ofile.open(wxUserFileName, ios_base::trunc);
+
+	//写入文件
+	ofile << userText;
+	ofile.close();
+
+	ShellExecute(NULL, NULL, L"notepad.exe", wxUserFileName.c_str(), L".\\", SW_SHOW);
+
 }

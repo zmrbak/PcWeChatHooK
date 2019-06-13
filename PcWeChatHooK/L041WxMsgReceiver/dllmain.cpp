@@ -244,8 +244,9 @@ VOID UnHookWx()
 	if (isWxHooked == TRUE)
 	{
 		//恢复指令
-		//WeChatWin.dll + 310573 - B9 E8CF2B10 - mov ecx, WeChatWin.dll + 125CFE8{ (0) }
-		BYTE originalCode[5] = { 0xB9,0xE8,0xCF,0x2B,0x10 };
+		//B9 E8CF895C
+		//mov ecx,0x5C89CFE8
+		BYTE originalCode[5] = { 0xB9,0xE8,0xCF,0x89,0x5C };
 
 		//恢复指令的地址
 		int hookAddress = wxBaseAddress + 0x310573;
@@ -260,23 +261,23 @@ VOID UnHookWx()
 //跳转到这里，让我们自己处理消息
 __declspec(naked) VOID RecieveMsgHook()
 {
-	//0FA20554  |.  C700 00000000 mov dword ptr ds:[eax],0x0
-	//0FA2055A  |.  C740 04 00000>mov dword ptr ds:[eax+0x4],0x0
-	//0FA20561  |.  C740 08 00000>mov dword ptr ds:[eax+0x8],0x0
-	//0FA20568  |.  A3 1CCC9710   mov dword ptr ds:[0x1097CC1C],eax        ;  WeChatWi.10767140
-	//0FA2056D  |>  50            push eax                                 ;  WeChatWi.10767140
-	//0FA2056E  |.  A1 E8CF9610   mov eax,dword ptr ds:[0x1096CFE8]
-	//HOOK这一句
-	//0FA20573  |.  B9 E8CF9610   mov ecx,WeChatWi.1096CFE8
+	//5B950554  |.  C700 00000000         mov dword ptr ds:[eax],0x0
+	//5B95055A  |.  C740 04 00000000      mov dword ptr ds:[eax+0x4],0x0
+	//5B950561  |.  C740 08 00000000      mov dword ptr ds:[eax+0x8],0x0
+	//5B950568  |.  A3 1CCC8A5C           mov dword ptr ds:[0x5C8ACC1C],eax
+	//5B95056D  |>  50                    push eax
+	//5B95056E  |.  A1 E8CF895C           mov eax,dword ptr ds:[0x5C89CFE8]
+	//Inline HOOK这一句
+	//mov ecx,0x5C89CFE8
+	//5B950573  |.  B9 E8CF895C           mov ecx,WeChatWi.5C89CFE8
 
-
-	//保存现场
+		//保存现场
 	__asm
 	{
 		//补充被覆盖的代码
-		//WeChatWin.dll + 310573 - B9 E8CF2B10 - mov ecx, WeChatWin.dll + 125CFE8{ (0) }
-		//mov ecx,10CDCFE8
-		mov ecx, 0x10CDCFE8
+		//5B950573  |.  B9 E8CF895C           mov ecx,WeChatWi.5C89CFE8
+		//mov ecx,0x5C89CFE8
+		mov ecx, 0x5C89CFE8
 
 		//提取esp寄存器内容，放在一个变量中
 		mov r_esp, esp
@@ -321,7 +322,7 @@ VOID RecieveMsg()
 	case 0x03:
 		receivedMessage.append(TEXT("图片"));
 		break;
-	
+
 	case 0x22:
 		receivedMessage.append(TEXT("语音"));
 		break;

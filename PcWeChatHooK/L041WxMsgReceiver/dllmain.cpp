@@ -232,8 +232,7 @@ VOID HookWx()
 		//新跳转指令中的数据=跳转的地址-原地址（HOOK的地址）-跳转指令的长度
 		*(DWORD*)& jmpCode[1] = (DWORD)RecieveMsgHook - hookAddress - 5;
 
-		//覆盖指令
-		//WeChatWin.dll + 310573 - B9 E8CF2B10 - mov ecx, WeChatWin.dll + 125CFE8{ (0) }
+		//覆盖指令 B9 E8CF895C //mov ecx,0x5C89CFE8
 		WriteProcessMemory(GetCurrentProcess(), (LPVOID)hookAddress, jmpCode, 5, 0);
 	}
 }

@@ -1,3 +1,11 @@
+<style>    
+img{
+            box-shadow:0 0 30px blue inset;
+            -webkit-box-shadow:0 0 30px blue inset;
+            -moz-box-shadow:0 0 30px blue inset;
+            -o-box-shadow:0 0 30px blue inset;
+      }
+    </style>
 <img src="https://raw.githubusercontent.com/zmrbak/PcWeChatHooK/master/%E5%90%8C%E5%AD%A6%E8%AF%84%E4%BB%B7/0IIFF6X%24FZH%5B0QYI6QH971S.png"><br/>
 <img src="https://raw.githubusercontent.com/zmrbak/PcWeChatHooK/master/%E5%90%8C%E5%AD%A6%E8%AF%84%E4%BB%B7/0L%7DOHPX%60%7DHU%7BKO4O0_T_FK9.png"><br/>
 <img src="https://raw.githubusercontent.com/zmrbak/PcWeChatHooK/master/%E5%90%8C%E5%AD%A6%E8%AF%84%E4%BB%B7/1B16873AA1B0877C668BFCA454C96238.jpg"><br/>

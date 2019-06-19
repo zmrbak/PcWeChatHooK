@@ -99,6 +99,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L053_IDA_WxSendRoomText", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L054_IDA_WxSendRoomAtText", "L054_IDA_WxSendRoomAtText\L054_IDA_WxSendRoomAtText.vcxproj", "{2E800DC3-0C1C-452F-9389-BCD0B3979887}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L055_IDA_WxGetRoomUserWxIdList", "L055_IDA_WxGetRoomUserWxIdList\L055_IDA_WxGetRoomUserWxIdList.vcxproj", "{3663DD5F-C559-4A6A-A763-5F092D747EC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -627,6 +629,16 @@ Global
 		{2E800DC3-0C1C-452F-9389-BCD0B3979887}.Release|x64.Build.0 = Release|x64
 		{2E800DC3-0C1C-452F-9389-BCD0B3979887}.Release|x86.ActiveCfg = Release|Win32
 		{2E800DC3-0C1C-452F-9389-BCD0B3979887}.Release|x86.Build.0 = Release|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Debug|x64.ActiveCfg = Debug|x64
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Debug|x64.Build.0 = Debug|x64
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Debug|x86.ActiveCfg = Debug|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Debug|x86.Build.0 = Debug|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Release|Any CPU.ActiveCfg = Release|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Release|x64.ActiveCfg = Release|x64
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Release|x64.Build.0 = Release|x64
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Release|x86.ActiveCfg = Release|Win32
+		{3663DD5F-C559-4A6A-A763-5F092D747EC2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,6 +42,8 @@ const string wxVersoin = "2.6.7.57";
 //我自己的微信ID
 string myWxId = "";
 
+CHAR originalCode[5] = { 0 };
+
 
 //使用VS+Detours调试，必须一个没用的导出函数
 VOID __declspec(dllexport) Test()
@@ -232,6 +234,9 @@ VOID HookWx()
 		//新跳转指令中的数据=跳转的地址-原地址（HOOK的地址）-跳转指令的长度
 		*(DWORD*)& jmpCode[1] = (DWORD)RecieveMsgHook - hookAddress - 5;
 
+		//保存当前位置的指令,在unhook的时候使用。
+		ReadProcessMemory(GetCurrentProcess(), (LPVOID)hookAddress, originalCode, 5, 0);
+
 		//覆盖指令 B9 E8CF895C //mov ecx,0x5C89CFE8
 		WriteProcessMemory(GetCurrentProcess(), (LPVOID)hookAddress, jmpCode, 5, 0);
 	}
@@ -245,7 +250,12 @@ VOID UnHookWx()
 		//恢复指令
 		//B9 E8CF895C
 		//mov ecx,0x5C89CFE8
-		BYTE originalCode[5] = { 0xB9,0xE8,0xCF,0x89,0x5C };
+		//##################################################################################
+		// 2019-06-20 修订
+		// 感谢群里的Lost朋友（1580500224）发现，这个地址中的数据不是固定的。
+		// 因此，在HOOK的时候，需要保存这个地址中的数据，然后在unhook的时候恢复。
+		//##################################################################################
+		//BYTE originalCode[5] = { 0xB9,0xE8,0xCF,0x89,0x5C };
 
 		//恢复指令的地址
 		int hookAddress = wxBaseAddress + 0x310573;

@@ -105,6 +105,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L056_IDA_WxSendImage", "L05
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L057_IDA_WxSendFile", "L057_IDA_WxSendFile\L057_IDA_WxSendFile.vcxproj", "{A8CE6E39-6BDB-4578-86D7-A4044FB26961}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L058_IDA_WxSetRoomAnnouncement", "L058_IDA_WxSetRoomAnnouncement\L058_IDA_WxSetRoomAnnouncement.vcxproj", "{8128BA38-5775-4197-8889-1C10403E9D02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -663,6 +665,16 @@ Global
 		{A8CE6E39-6BDB-4578-86D7-A4044FB26961}.Release|x64.Build.0 = Release|x64
 		{A8CE6E39-6BDB-4578-86D7-A4044FB26961}.Release|x86.ActiveCfg = Release|Win32
 		{A8CE6E39-6BDB-4578-86D7-A4044FB26961}.Release|x86.Build.0 = Release|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Debug|x64.ActiveCfg = Debug|x64
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Debug|x64.Build.0 = Debug|x64
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Debug|x86.ActiveCfg = Debug|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Debug|x86.Build.0 = Debug|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Release|x64.ActiveCfg = Release|x64
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Release|x64.Build.0 = Release|x64
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Release|x86.ActiveCfg = Release|Win32
+		{8128BA38-5775-4197-8889-1C10403E9D02}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

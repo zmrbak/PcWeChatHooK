@@ -65,11 +65,13 @@
     <None Include="app.manifest" />
     <None Include="易语言\E2EE互联网服务器套件1.9.2.zip" />
     <None Include="易语言\WxHttpApi.e" />
+    <None Include="易语言\发送文本消息.e" />
     <None Include="易语言\可爱猫3.66.zip" />
     <None Include="易语言\可爱猫SDK模块3.2.zip" />
     <None Include="易语言\精易模块[v7.3].zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="易语言\eHook.dll" />
     <Content Include="易语言\Newtonsoft.Json.dll" />
     <Content Include="易语言\WxHttpApi.dll" />
     <Content Include="易语言\微信DLL注入器V1.0.3.exe" />

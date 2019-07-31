@@ -24,5 +24,5 @@ QQ群：741218412
 <br/>
 # 学员评价
 
-<img src="/zmrbak/PcWeChatHooK/blob/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/0IIFF6X$FZH%5B0QYI6QH971S.png?raw=true"/>
+<img src="https://github.com/zmrbak/PcWeChatHooK/blob/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/0IIFF6X$FZH%5B0QYI6QH971S.png?raw=true"/>
 

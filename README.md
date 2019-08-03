@@ -1,15 +1,13 @@
-# <a href="http://t.cn/EXUbebQ" target="_blank">云课堂《2019 PC微信 探秘》示例代码</a>
-<img src="https://github.com/zmrbak/PcWeChatHooK/blob/master/images/Header.png"/>
+# 云课堂《2019 PC微信 探秘》示例代码
+网易云课堂：<a href="http://t.cn/EXUbebQ" target="_blank">http://t.cn/EXUbebQ</a>
 
 # 课程简介
 
 对于那些“不听话”的软件，怎么办？
 <br/>
-你是想忍声吞气凑合着用？
+你是想忍声吞气凑合着用？还是想“修理”一顿，让它乖乖地按照你的意思办？
 <br/>
-还是想“修理”一顿，让它乖乖地按照你的意思办？
-<br/>
-<a href="http://t.cn/EXUbebQ" target="_blank">网易云课堂《2019 PC微信 探秘》</a>从PC微信开始，学习“驯服”那些你看中的软件！
+网易云课堂《2019 PC微信 探秘》从PC微信开始，学习“驯服”那些你看中的软件！
 <br/>
 掌握这个技能，无论它是什么软件，只能乖乖按你的意思办！！！
 <br/>
@@ -19,8 +17,6 @@
 # 交流
 QQ群：741218412
 
-# 课程地址：
-<a href="http://t.cn/EXUbebQ" target="_blank">网易云课堂《2019 PC微信 探秘》</a>
 <br/>
 # 学员评价
 <li><img src="https://raw.githubusercontent.com/zmrbak/PcWeChatHooK/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/Screenshot_2019-07-31-08-49-20.png"><br/>

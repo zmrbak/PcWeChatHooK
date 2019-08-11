@@ -1,0 +1,17 @@
+62.	简单的轻量级的高级网络协议：etcp(三、etcp c++源码编译) 
+1)	新建项目，复制代码
+framework.h 	?? 	stdafx.h
+pch.h			??		stdafx.h
+tcp.h			??		tcp.h
+dllmain.cpp		??		dllmain.cpp
+pch.cpp			??		stdafx.cpp
+tcp.cpp			??		tcp.cpp
+2)	处理警告错误
+根据提示，添加定义
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+3)	处理警告错误
+属性\配置属性\连接器\输入\忽略特定默认库: LIBCMT
+4)	运行库
+属性\配置属性\C/C++\代码生成\运行库:/MT
+5)	差异对比

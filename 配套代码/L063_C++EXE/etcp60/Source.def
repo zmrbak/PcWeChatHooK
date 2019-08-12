@@ -1,0 +1,16 @@
+LIBRARY
+EXPORTS
+etcp_vip
+etcp_tcp_server
+etcp_tcp_send
+etcp_tcp_sends
+etcp_tcp_close_Client
+etcp_tcp_close
+etcp_tcp_client
+etcp_tcp_client_send
+etcp_tcp_client_close
+etcp_tcp_get_port
+etcp_tcp_get_ip
+etcp_get_ip
+etcp_tcp_get_socket
+etcp_tcp_client_so

@@ -1,0 +1,12 @@
+﻿<Window x:Class="L065_ETCP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:L065_ETCP"
+        mc:Ignorable="d"
+        Title="C# ETCP SERVER" Height="297" Width="254" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox x:Name="textBox" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+    </Grid>
+</Window>

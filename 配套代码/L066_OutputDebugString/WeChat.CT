@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="28">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"是否启用输出"</Description>
+      <LastState Value="0" RealAddress="550A317D"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>WeChatWin.dll+126317D</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"调试级别"</Description>
+      <LastState Value="2" RealAddress="55048280"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>WeChatWin.dll+1208280</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

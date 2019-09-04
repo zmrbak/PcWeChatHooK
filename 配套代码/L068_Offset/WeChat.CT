@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="28">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"微信群链表头"</Description>
+      <LastState Value="045281D0" RealAddress="0449257C"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>4 Bytes</VariableType>
+      <Address>WeChatWin.dll+126E0A0</Address>
+      <Offsets>
+        <Offset>0x678+0x64</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"微信群数量"</Description>
+      <LastState Value="0000000C" RealAddress="04492580"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>4 Bytes</VariableType>
+      <Address>WeChatWin.dll+126E0A0</Address>
+      <Offsets>
+        <Offset>0x678+0x64+4</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

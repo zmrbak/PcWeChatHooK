@@ -18,7 +18,7 @@
 
 非学员交流：456197310
 
-云课堂学员：741218412 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=0cdef8b48adc38e17306353fe37c08fe2c8b22fcb8cbdc18c17c7e84fc18194b"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="PC微信HOOK逆向分析" title="PC微信HOOK逆向分析"></a>
+云课堂学员：741218412 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0cdef8b48adc38e17306353fe37c08fe2c8b22fcb8cbdc18c17c7e84fc18194b"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PC微信HOOK逆向分析" title="PC微信HOOK逆向分析"></a>
 
 # 学员评价
 

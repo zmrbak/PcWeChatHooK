@@ -317,6 +317,9 @@ __declspec(naked) VOID RecieveMsgHook()
 		mov ecx, 0x5C89CFE8
 
 		//提取esp寄存器内容，放在一个变量中
+
+		//这里使用全局变量 r_esp，将导致丢失消息，原因：多线程情况下，新数据覆盖旧数据
+		//如何使用局部变量，请继续学习课程（后面课程中，有讲解），或者自行探索，或在群里问师兄弟们。
 		mov r_esp, esp
 
 		//保存寄存器
@@ -340,6 +343,9 @@ __declspec(naked) VOID RecieveMsgHook()
 
 VOID RecieveMsg()
 {
+	//这个函数，取到数据马上启动一个线程去处理，并且立即返回，不要执行太多逻辑。
+	//这里是课程演示代码，不宜搞得太复杂。
+
 	wstring receivedMessage = TEXT("");
 	BOOL isFriendMsg = FALSE;
 	//[[esp]]

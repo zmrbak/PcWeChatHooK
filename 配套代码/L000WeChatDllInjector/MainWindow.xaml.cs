@@ -286,6 +286,10 @@ namespace L000WeChatDllInjector
                     RegistryKey software = registryKey.OpenSubKey("Software\\Tencent\\WeChat");
                     object InstallPath = software.GetValue("InstallPath");
                     WxPath = InstallPath.ToString() + "\\WeChat.exe";
+
+                    //NeedUpdateType 设置低于100，禁止自动升级
+                    software.SetValue("NeedUpdateType", 80);
+
                     registryKey.Close();
                 }
                 catch

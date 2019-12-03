@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -14,22 +16,27 @@ namespace L000WeChatDllInjector
     /// </summary>
     public partial class App : Application
     {
+        static Mutex mutex;
         protected override void OnStartup(StartupEventArgs e)
         {
             //只运行一个实例
-            //把已经启动的实例，全部结束
-            Process thisProcess = Process.GetCurrentProcess();
-            Process[] processes = Process.GetProcessesByName(thisProcess.ProcessName);
-
-            foreach (Process item in processes)
+            mutex = new Mutex(true, "WeChatDllInjector", out bool isNewInstance);
+            if (isNewInstance != true)
             {
-                if (item.Id != thisProcess.Id)
+                IntPtr intPtr = FindWindowW(null, "单实例应用程序");
+                if (intPtr != IntPtr.Zero)
                 {
-                    item.Kill();
+                    SetForegroundWindow(intPtr);
                 }
-            }
 
-            base.OnStartup(e);
+                Shutdown();
+            }
         }
+
+        [DllImport("User32", CharSet = CharSet.Unicode)]
+        static extern IntPtr FindWindowW(String lpClassName, String lpWindowName);
+
+        [DllImport("User32", CharSet = CharSet.Unicode)]
+        static extern Boolean SetForegroundWindow(IntPtr hWnd);
     }
 }

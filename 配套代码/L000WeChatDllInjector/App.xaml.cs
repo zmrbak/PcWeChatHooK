@@ -23,15 +23,19 @@ namespace L000WeChatDllInjector
             mutex = new Mutex(true, "WeChatDllInjector", out bool isNewInstance);
             if (isNewInstance != true)
             {
-                IntPtr intPtr = FindWindowW(null, "单实例应用程序");
+                IntPtr intPtr = FindWindowW(null, "微信DLL注入器");
                 if (intPtr != IntPtr.Zero)
                 {
+                    ShowWindowAsync(intPtr, 9);
                     SetForegroundWindow(intPtr);
                 }
 
                 Shutdown();
             }
         }
+
+        [DllImport("User32", CharSet = CharSet.Unicode)]
+        static extern IntPtr ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 
         [DllImport("User32", CharSet = CharSet.Unicode)]
         static extern IntPtr FindWindowW(String lpClassName, String lpWindowName);

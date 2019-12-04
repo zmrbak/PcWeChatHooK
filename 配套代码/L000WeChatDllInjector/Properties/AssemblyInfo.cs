@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("网易云课堂《2019PC微信探秘》配套工具")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("赵庆明老师")]
-[assembly: AssemblyProduct("WeChatDllInjector")]
+[assembly: AssemblyProduct("http://t.cn/EXUbebQ")]
 [assembly: AssemblyCopyright("网易云课堂《2019PC微信探秘》")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -51,5 +51,5 @@ using System.Windows;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.1")]
-[assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: AssemblyVersion("1.0.0.5")]
+[assembly: AssemblyFileVersion("1.0.0.5")]

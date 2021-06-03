@@ -86,6 +86,10 @@ namespace L015ReadWxInfo
 
         }
 
+//注意：这个函数默认传入的参数nSize为100，在大多数情况下是可用的。
+//但是在获取微信头像的时候，这个参数太小，获取的字符串长度不够。
+//因此，在这个时候，你需要传入要给大小适合的，比较大一点的数字，才能完整地将这微信头像的url字符串完整地读出来。
+//此处，感谢609269060（lion），发现这个问题。
         String GetString(IntPtr hProcess, IntPtr lpBaseAddress, int nSize = 100)
         {
             byte[] data = new byte[nSize];

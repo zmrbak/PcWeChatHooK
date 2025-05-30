@@ -1,5 +1,5 @@
 # 云课堂《2019 PC微信 探秘》示例代码
-网易云课堂：<a href="http://t.cn/EXUbebQ" target="_blank">http://t.cn/EXUbebQ</a>
+CSDN课堂：<a href="https://edu.csdn.net/course/detail/26500" target="_blank">CSDN课堂</a>
 
 # 课程简介
 
